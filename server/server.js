@@ -25,7 +25,7 @@ app.use('/api/bookings', bookingRoutes);
 
 
 app.use((err, req, res, next) => {
-  console.error(err.stack);
+  // console.error(err.stack);
   res.status(500).send('Something broke!');
 });
 

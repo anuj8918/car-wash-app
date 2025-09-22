@@ -25,7 +25,7 @@ const HomePage = () => {
         ...filters, search: searchQuery, sort: sortOption, page: currentPage, limit: 9,
       });
       for (const [key, value] of params.entries()) { if (!value) { params.delete(key); } }
-      const response = await axios.get(`http://localhost:5000/api/bookings?${params.toString()}`);
+      const response = await axios.get(`https://car-wash-app-09rp.onrender.com/api/bookings?${params.toString()}`);
       setBookings(response.data.bookings);
       setTotalPages(response.data.totalPages);
     } catch (err) {

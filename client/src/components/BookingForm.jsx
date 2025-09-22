@@ -27,7 +27,7 @@ const BookingForm = () => {
   useEffect(() => {
     if (isEditing) {
       setLoading(true);
-      axios.get(`http://localhost:5000/api/bookings/${id}`)
+      axios.get(`https://car-wash-app-09rp.onrender.com/api/bookings/${id}`)
         .then(response => {
           const bookingData = {
             ...response.data,
@@ -84,9 +84,9 @@ const BookingForm = () => {
     setError(null);
     try {
       if (isEditing) {
-        await axios.put(`http://localhost:5000/api/bookings/${id}`, formData);
+        await axios.put(`https://car-wash-app-09rp.onrender.com/api/bookings/${id}`, formData);
       } else {
-        await axios.post('http://localhost:5000/api/bookings', formData);
+        await axios.post('https://car-wash-app-09rp.onrender.com/api/bookings', formData);
       }
       navigate('/');
     } catch (err) {

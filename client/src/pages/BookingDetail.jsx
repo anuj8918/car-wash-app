@@ -6,7 +6,7 @@ import {
   FaArrowLeft, FaCheckCircle, FaExclamationCircle, FaTimesCircle, FaHourglassHalf, FaUser, FaTools 
 } from 'react-icons/fa';
 
-// --- CONFIRMATION MODAL COMPONENT (YEH MISSING THA) ---
+
 const ConfirmationModal = ({ isOpen, onClose, onConfirm, message }) => {
   if (!isOpen) return null;
   return (
@@ -55,7 +55,7 @@ const BookingDetail = () => {
   const CurrentStatusIcon = currentStatus.icon;
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/api/bookings/${id}`)
+    axios.get(`https://car-wash-app-09rp.onrender.com/api/bookings/${id}`)
       .then(response => setBooking(response.data))
       .catch(err => setError('Booking not found.'))
       .finally(() => setLoading(false));
@@ -64,7 +64,7 @@ const BookingDetail = () => {
   const handleDelete = async () => {
     setIsModalOpen(false); 
     try {
-      await axios.delete(`http://localhost:5000/api/bookings/${id}`);
+      await axios.delete(`https://car-wash-app-09rp.onrender.com/api/bookings/${id}`);
       navigate('/');
     } catch (err) {
       setError('Failed to delete booking.');
