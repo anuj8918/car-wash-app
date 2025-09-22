@@ -72,34 +72,19 @@ npm run dev
 
 ## 📸 Screenshots
 
-### Desktop
-
-* Homepage
-* Booking Detail
-* Add Booking
-* Edit Booking
-* Search Results
-
-### Mobile (2 views)
-
-* Homepage Mobile View
-* Booking Detail Mobile View
-
-```markdown
-## 📸 Screenshots
-
 ### Desktop Views
+
 ![Homepage Desktop](./screenshots/homepage-desktop.png)
 ![Booking Detail Desktop](./screenshots/detailpage-desktop.png)
 ![Add Booking Desktop](./screenshots/addpage-desktop.png)
 ![Edit Booking Desktop](./screenshots/editpage-desktop.png)
 
 ### Mobile Views
+
 ![Homepage Mobile](./screenshots/homepage-mobile.jpg)
 ![Booking Detail Mobile](./screenshots/detailpage-mobile.jpg)
 ![Add Booking Mobile](./screenshots/addpage-mobile.jpg)
 ![Edit Booking Mobile](./screenshots/editpage-mobile.jpg)
-```
 
 ---
 
