@@ -1,6 +1,6 @@
 import Booking from '../models/Booking.js';
 
-// GET all bookings with filters, search, pagination, and sorting
+
 export const getBookings = async (req, res) => {
   try {
     const { serviceType, carType, status, startDate, endDate, search, page = 1, limit = 9, sort = 'createdAt' } = req.query;
@@ -8,7 +8,7 @@ export const getBookings = async (req, res) => {
 
     if (serviceType) filter.serviceType = serviceType;
     if (status) filter.status = status;
-    // UPDATED for flattened schema
+    
     if (carType) filter.carType = carType;
     
     if (startDate && endDate) {
@@ -17,7 +17,7 @@ export const getBookings = async (req, res) => {
 
     if (search) {
       const searchRegex = new RegExp(search, 'i');
-      // UPDATED for flattened schema
+      
       filter.$or = [
         { customerName: searchRegex },
         { carMake: searchRegex },
@@ -46,7 +46,7 @@ export const getBookings = async (req, res) => {
   }
 };
 
-// GET a single booking by ID
+
 export const getBookingById = async (req, res) => {
   try {
     const booking = await Booking.findById(req.params.id);
@@ -57,7 +57,7 @@ export const getBookingById = async (req, res) => {
   }
 };
 
-// POST to create a new booking
+
 export const createBooking = async (req, res) => {
   try {
     const booking = new Booking(req.body);
@@ -69,7 +69,7 @@ export const createBooking = async (req, res) => {
   }
 };
 
-// PUT to update a booking by ID
+
 export const updateBooking = async (req, res) => {
   try {
     const updatedBooking = await Booking.findByIdAndUpdate(req.params.id, req.body, { new: true, runValidators: true });
@@ -80,7 +80,7 @@ export const updateBooking = async (req, res) => {
   }
 };
 
-// DELETE a booking by ID
+
 export const deleteBooking = async (req, res) => {
   try {
     const booking = await Booking.findByIdAndDelete(req.params.id);

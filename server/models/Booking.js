@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 const bookingSchema = new mongoose.Schema({
   customerName: { type: String, required: true, trim: true },
   
-  // FLATTENED CAR DETAILS
+  
   carMake: { type: String, trim: true },
   carModel: { type: String, trim: true },
   carYear: Number,
@@ -19,7 +19,7 @@ const bookingSchema = new mongoose.Schema({
   addons: [String],
 }, { timestamps: true });
 
-// Force recompile of the model to be safe
+
 if (mongoose.models && mongoose.models.Booking) {
   delete mongoose.models.Booking;
 }
